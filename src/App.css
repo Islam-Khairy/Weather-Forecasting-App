@@ -22,7 +22,7 @@ body {
 .App::before {
   content: '';
   position: absolute;
-  background: rgba(72 67 67 / 70%);
+  background: rgba(72 67 67 / 60%);
   top: 0;
   left: 0;
   height: 100%;
@@ -324,6 +324,9 @@ input[type='text'] {
     width: 90%;
     top: 32%;
     padding-top: 5rem;
+  }
+  .daily-forecast-container {
+    bottom: 1rem;
   }
 }
 
