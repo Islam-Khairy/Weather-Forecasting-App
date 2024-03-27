@@ -178,6 +178,8 @@ body {
   transform: translateY(-50%);
   cursor: pointer;
   transition: transform 0.2s ease;
+  -webkit-tap-highlight-color: transparent; 
+  tap-highlight-color: transparent;
 }
 
 .right-arrow {

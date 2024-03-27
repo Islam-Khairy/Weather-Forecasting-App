@@ -79,14 +79,12 @@ const WeatherCard = () => {
           ))}
         </div>
         <div
-          id='rightArrow'
           className='right-arrow'
           onClick={slideRight}
         >
           <FontAwesomeIcon icon={faCaretRight} />
         </div>
         <div
-          id='leftArrow'
           className='left-arrow'
           onClick={slideLeft}
         >
