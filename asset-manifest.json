@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Weather-Forecasting-App/static/css/main.5669a826.css",
-    "main.js": "/Weather-Forecasting-App/static/js/main.90e29052.js",
+    "main.css": "/Weather-Forecasting-App/static/css/main.c26b76e4.css",
+    "main.js": "/Weather-Forecasting-App/static/js/main.767e575d.js",
     "static/js/488.5f2218c8.chunk.js": "/Weather-Forecasting-App/static/js/488.5f2218c8.chunk.js",
     "static/media/16.jpg": "/Weather-Forecasting-App/static/media/16.5a0419bffc1bae81957e.jpg",
     "static/media/Amiri-Regular.ttf": "/Weather-Forecasting-App/static/media/Amiri-Regular.854754d93a8cf8711a94.ttf",
@@ -11,12 +11,12 @@
     "static/media/ArefRuqaa-Bold.ttf": "/Weather-Forecasting-App/static/media/ArefRuqaa-Bold.96b09607cb1e588e9d27.ttf",
     "static/media/ArefRuqaa-Regular.ttf": "/Weather-Forecasting-App/static/media/ArefRuqaa-Regular.f1748641e2187e73c259.ttf",
     "index.html": "/Weather-Forecasting-App/index.html",
-    "main.5669a826.css.map": "/Weather-Forecasting-App/static/css/main.5669a826.css.map",
-    "main.90e29052.js.map": "/Weather-Forecasting-App/static/js/main.90e29052.js.map",
+    "main.c26b76e4.css.map": "/Weather-Forecasting-App/static/css/main.c26b76e4.css.map",
+    "main.767e575d.js.map": "/Weather-Forecasting-App/static/js/main.767e575d.js.map",
     "488.5f2218c8.chunk.js.map": "/Weather-Forecasting-App/static/js/488.5f2218c8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5669a826.css",
-    "static/js/main.90e29052.js"
+    "static/css/main.c26b76e4.css",
+    "static/js/main.767e575d.js"
   ]
 }
