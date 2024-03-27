@@ -127,10 +127,13 @@ body {
 }
 
 .hourly-forecast-container {
+  position: relative;
+  width: 100%;
+}
+
+.hourly-forecast-items {
   display: flex;
-  max-width: 100%;
-  justify-content: start;
-  align-items: start;
+  justify-content: flex-start;
   overflow: auto;
   scrollbar-width: thin;
 }
@@ -165,9 +168,34 @@ body {
   height: 48px;
 }
 
+.right-arrow,
+.left-arrow {
+  display: block;
+  position: absolute;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.9);
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.right-arrow {
+  right: -1.6rem;
+}
+
+.left-arrow {
+  left: -2rem;
+}
+
+.right-arrow:active,
+.left-arrow:active {
+  transform: translateY(-50%) scale(1.1);
+}
+
 .daily-forecast-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
   grid-gap: 2rem;
   justify-content: center;
   padding: 0.5rem 1rem;
@@ -291,12 +319,12 @@ input[type='text'] {
 }
 
 @media (max-width: 768px) {
-  .hourly-forecast-container {
+  .hourly-forecast-items {
     scrollbar-color: transparent transparent;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-  .hourly-forecast-container::-webkit-scrollbar {
+  .hourly-forecast-items::-webkit-scrollbar {
     display: none;
   }
 }

@@ -1,5 +1,5 @@
 import '../App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import CloudIcon from '@mui/icons-material/Cloud';
@@ -8,6 +8,8 @@ import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import SearchComponent from './SearchComponent';
 import { useWeather } from '../contexts/WeatherContext';
 import { updateHourlyForecast } from '../reducers/WeatherReducer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 const WeatherCard = () => {
   const { state, dispatch, fetchWeatherData } = useWeather();
@@ -33,30 +35,63 @@ const WeatherCard = () => {
     }
   };
 
+  const hourlyForecastContainerRef = useRef(null);
+
+  const slideRight = () => {
+    if (hourlyForecastContainerRef.current) {
+      hourlyForecastContainerRef.current.scrollLeft += 100;
+    }
+  };
+
+  const slideLeft = () => {
+    if (hourlyForecastContainerRef.current) {
+      hourlyForecastContainerRef.current.scrollLeft -= 100;
+    }
+  };
+
   const renderHourlyForecast = () => {
     if (!weatherData.hourlyForecast) return null;
     return (
       <div className='hourly-forecast-container'>
-        {weatherData.hourlyForecast.map((hourly, index) => (
-          <div
-            key={index}
-            className={`hourly-forecast-item ${
-              selectedHourlyForecast === hourly ? 'selected-item' : ''
-            }`}
-            onClick={() => handleHourlyClick(hourly)}
-          >
-            <div>
-              <Typography variant='h5'>{hourly.time}</Typography>
+        <div
+          className='hourly-forecast-items'
+          ref={hourlyForecastContainerRef}
+        >
+          {weatherData.hourlyForecast.map((hourly, index) => (
+            <div
+              key={index}
+              className={`hourly-forecast-item ${
+                selectedHourlyForecast === hourly ? 'selected-item' : ''
+              }`}
+              onClick={() => handleHourlyClick(hourly)}
+            >
+              <div>
+                <Typography variant='h5'>{hourly.time}</Typography>
+              </div>
+              <div className='hourly-forecast-temp-icon'>
+                <Typography variant='h6'>{hourly.temperature}&deg;م</Typography>
+                <img
+                  src={hourly.icon}
+                  alt=''
+                />
+              </div>
             </div>
-            <div className='hourly-forecast-temp-icon'>
-              <Typography variant='h6'>{hourly.temperature}&deg;م</Typography>
-              <img
-                src={hourly.icon}
-                alt=''
-              />
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div
+          id='rightArrow'
+          className='right-arrow'
+          onClick={slideRight}
+        >
+          <FontAwesomeIcon icon={faCaretRight} />
+        </div>
+        <div
+          id='leftArrow'
+          className='left-arrow'
+          onClick={slideLeft}
+        >
+          <FontAwesomeIcon icon={faCaretLeft} />
+        </div>
       </div>
     );
   };
