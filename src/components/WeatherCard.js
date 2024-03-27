@@ -38,14 +38,24 @@ const WeatherCard = () => {
   const hourlyForecastContainerRef = useRef(null);
 
   const slideRight = () => {
-    if (hourlyForecastContainerRef.current) {
-      hourlyForecastContainerRef.current.scrollLeft += 100;
+    const container = hourlyForecastContainerRef.current;
+    if (container) {
+      const scrollAmount = container.clientWidth / 1;
+      container.scrollTo({
+        left: container.scrollLeft + scrollAmount,
+        behavior: 'smooth',
+      });
     }
   };
 
   const slideLeft = () => {
-    if (hourlyForecastContainerRef.current) {
-      hourlyForecastContainerRef.current.scrollLeft -= 100;
+    const container = hourlyForecastContainerRef.current;
+    if (container) {
+      const scrollAmount = container.clientWidth / 1;
+      container.scrollTo({
+        left: container.scrollLeft - scrollAmount,
+        behavior: 'smooth',
+      });
     }
   };
 
