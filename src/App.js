@@ -3,6 +3,7 @@ import WeatherCrad from './components/WeatherCard';
 import { ThemeProvider } from '@emotion/react';
 import { createTheme } from '@mui/material/styles';
 import { WeatherProvider } from './contexts/WeatherContext';
+import Footer from './components/Footer';
 
 const theme = createTheme({
   typography: {
@@ -16,6 +17,7 @@ function App() {
       <WeatherProvider>
         <div className='App'>
           <WeatherCrad />
+          <Footer />
         </div>
       </WeatherProvider>
     </ThemeProvider>
