@@ -322,8 +322,8 @@ input[type='text'] {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 1rem;
-  padding: 1rem;
+  left: 10px;
+  padding: 10px;
   color: white;
 }
 
