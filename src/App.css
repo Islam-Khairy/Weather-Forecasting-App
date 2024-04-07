@@ -277,11 +277,11 @@ input[type='text'] {
   font-weight: 600;
 }
 
-.search-icon {
+.search-icon,
+.location-icon {
   color: white;
   font-size: 2.4rem !important;
   position: absolute;
-  left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
@@ -290,11 +290,21 @@ input[type='text'] {
   tap-highlight-color: transparent;
 }
 
-.search-icon:hover {
+.search-icon {
+  left: 1rem;
+}
+
+.location-icon {
+  left: -3rem;
+}
+
+.search-icon:hover,
+.location-icon:hover {
   color: #007bff;
 }
 
-.search-icon:active {
+.search-icon:active,
+.location-icon:active {
   transform: translateY(-50%) scale(1.2);
 }
 

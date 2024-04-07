@@ -5,7 +5,7 @@ import Container from '@mui/material/Container';
 import CloudIcon from '@mui/icons-material/Cloud';
 import AirIcon from '@mui/icons-material/Air';
 import WaterDropIcon from '@mui/icons-material/WaterDrop';
-import SearchComponent from './SearchComponent';
+import Search from './Search';
 import { useWeather } from '../contexts/WeatherContext';
 import { updateHourlyForecast } from '../reducers/WeatherReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -187,9 +187,7 @@ const WeatherCard = () => {
                 />
               </div>
             </div>
-            <SearchComponent
-              HandleOnClickEvent={(cityName) => fetchWeatherData(dispatch, cityName)}
-            />
+            <Search HandleSearch={(cityName) => fetchWeatherData(dispatch, cityName)} />            
             <div
               id='spinner'
               style={{ display: loading ? 'block' : 'none' }}

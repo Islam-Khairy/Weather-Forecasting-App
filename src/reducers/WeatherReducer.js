@@ -68,7 +68,6 @@ const transformWeatherData = (data, location) => {
 
 export const WeatherReducer = (state, action) => {
   switch (action.type) {
-    
     case 'FETCH_WEATHER_START':
       return { ...state, loading: true };
 
@@ -94,7 +93,8 @@ export const WeatherReducer = (state, action) => {
       ) {
         errorMessage = 'يرجى التحقق من الإتصال بالإنترنت وإعادة المحاولة';
       } else if (error instanceof TypeError && error.message.includes('timeout')) {
-        errorMessage = 'انتهى الوقت المحدد للإستجابة. يرجى التحقق من اتصال الإنترنت وإعادة المحاولة.';
+        errorMessage =
+          'انتهى الوقت المحدد للإستجابة. يرجى التحقق من اتصال الإنترنت وإعادة المحاولة.';
       }
       Swal.fire({
         icon: 'error',
@@ -117,12 +117,19 @@ export const WeatherReducer = (state, action) => {
   }
 };
 
-export const fetchWeatherData = async (dispatch, cityName) => {
+export const fetchWeatherData = async (dispatch, input) => {
   dispatch({ type: 'FETCH_WEATHER_START' });
   try {
-    const response = await axios.get(
-      `https://api.weatherapi.com/v1/forecast.json?key=a93da07875fc465c97a75512241003&q=${cityName}&days=7&aqi=no&alerts=no&units=metric&lang=ar`,
-    );
+    let url;
+    if (typeof input === 'string') {
+      // If input is a string (city name), fetch weather data by city name
+      url = `https://api.weatherapi.com/v1/forecast.json?key=a93da07875fc465c97a75512241003&q=${input}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
+    } else if (typeof input === 'object') {
+      // If input is an object containing coordinates, fetch weather data by coordinates
+      const { latitude, longitude } = input;
+      url = `https://api.weatherapi.com/v1/forecast.json?key=a93da07875fc465c97a75512241003&q=${latitude},${longitude}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
+    }
+    const response = await axios.get(url);
     const weatherData = response.data;
     if (!weatherData || !weatherData.location) {
       throw new Error('City data not found');
@@ -143,6 +150,7 @@ export const fetchWeatherData = async (dispatch, cityName) => {
     });
   }
 };
+
 
 export const updateHourlyForecast = (dispatch, updatedHourlyForecast) => {
   dispatch({
