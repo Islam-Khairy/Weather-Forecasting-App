@@ -22,7 +22,8 @@ const WeatherCard = () => {
 
   useEffect(() => {
     i18n.changeLanguage('ar');
-  }, []);
+}, [i18n]);npm install gh-pages --save-dev
+
 
   useEffect(() => {
     setSelectedHourlyForecast(null);
