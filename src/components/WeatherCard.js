@@ -10,13 +10,19 @@ import { useWeather } from '../contexts/WeatherContext';
 import { updateHourlyForecast } from '../reducers/WeatherReducer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const WeatherCard = () => {
+  const { t, i18n } = useTranslation();
   const { state, dispatch, fetchWeatherData } = useWeather();
   const { weatherData, searchPerformed, loading } = state;
 
   const [selectedHourlyForecast, setSelectedHourlyForecast] = useState(null);
   const [selectedDailyForecast, setSelectedDailyForecast] = useState(null);
+
+  useEffect(() => {
+    i18n.changeLanguage('ar');
+  }, []);
 
   useEffect(() => {
     setSelectedHourlyForecast(null);
@@ -149,13 +155,13 @@ const WeatherCard = () => {
                   variant='h1'
                   className='city-name'
                 >
-                  {weatherData.city || ''}
+                  {weatherData.city ? t(weatherData.city) : ''}
                 </Typography>
                 <Typography
                   variant='h3'
                   className='country-name'
                 >
-                  {weatherData.country || ''}
+                  {weatherData.country ? t(weatherData.country) : ''}
                 </Typography>
                 <div className='date-time'>
                   <Typography variant='h4'>
@@ -187,7 +193,7 @@ const WeatherCard = () => {
                 />
               </div>
             </div>
-            <Search HandleSearch={(cityName) => fetchWeatherData(dispatch, cityName)} />            
+            <Search HandleSearch={(cityName) => fetchWeatherData(dispatch, cityName)} />
             <div
               id='spinner'
               style={{ display: loading ? 'block' : 'none' }}
