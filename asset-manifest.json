@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/Weather-Forecasting-App/static/css/main.3b5be4d4.css",
-    "main.js": "/Weather-Forecasting-App/static/js/main.d335b60c.js",
+    "main.css": "/Weather-Forecasting-App/static/css/main.67e022da.css",
+    "main.js": "/Weather-Forecasting-App/static/js/main.c71e90f7.js",
     "static/js/488.5f2218c8.chunk.js": "/Weather-Forecasting-App/static/js/488.5f2218c8.chunk.js",
     "static/media/16.jpg": "/Weather-Forecasting-App/static/media/16.5a0419bffc1bae81957e.jpg",
     "static/media/Amiri-Regular.ttf": "/Weather-Forecasting-App/static/media/Amiri-Regular.854754d93a8cf8711a94.ttf",
     "static/media/Amiri-Italic.ttf": "/Weather-Forecasting-App/static/media/Amiri-Italic.e6d26d9b1685081b8a60.ttf",
     "static/media/Amiri-Bold.ttf": "/Weather-Forecasting-App/static/media/Amiri-Bold.b2f7400dbb749bb3d119.ttf",
     "static/media/Amiri-BoldItalic.ttf": "/Weather-Forecasting-App/static/media/Amiri-BoldItalic.d4ff3b1cbf674a273e8e.ttf",
+    "static/media/Charm-Bold.ttf": "/Weather-Forecasting-App/static/media/Charm-Bold.c764b007118832587982.ttf",
+    "static/media/Charm-Regular.ttf": "/Weather-Forecasting-App/static/media/Charm-Regular.c76a059b4002b52f4682.ttf",
     "static/media/ArefRuqaa-Bold.ttf": "/Weather-Forecasting-App/static/media/ArefRuqaa-Bold.96b09607cb1e588e9d27.ttf",
+    "static/media/Courgette-Regular.ttf": "/Weather-Forecasting-App/static/media/Courgette-Regular.f99d9948a486f6270149.ttf",
     "static/media/ArefRuqaa-Regular.ttf": "/Weather-Forecasting-App/static/media/ArefRuqaa-Regular.f1748641e2187e73c259.ttf",
     "index.html": "/Weather-Forecasting-App/index.html",
     "static/media/getFetch.cjs": "/Weather-Forecasting-App/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
-    "main.3b5be4d4.css.map": "/Weather-Forecasting-App/static/css/main.3b5be4d4.css.map",
-    "main.d335b60c.js.map": "/Weather-Forecasting-App/static/js/main.d335b60c.js.map",
+    "main.67e022da.css.map": "/Weather-Forecasting-App/static/css/main.67e022da.css.map",
+    "main.c71e90f7.js.map": "/Weather-Forecasting-App/static/js/main.c71e90f7.js.map",
     "488.5f2218c8.chunk.js.map": "/Weather-Forecasting-App/static/js/488.5f2218c8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3b5be4d4.css",
-    "static/js/main.d335b60c.js"
+    "static/css/main.67e022da.css",
+    "static/js/main.c71e90f7.js"
   ]
 }
