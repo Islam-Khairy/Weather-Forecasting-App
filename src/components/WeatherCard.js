@@ -8,9 +8,9 @@ import WaterDropIcon from '@mui/icons-material/WaterDrop';
 import Search from './Search';
 import { useWeather } from '../contexts/WeatherContext';
 import { updateHourlyForecast } from '../reducers/WeatherReducer';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import HourlyForecast from './HourlyForecast';
+import DailyForecast from './DailyForecast';
 
 const WeatherCard = () => {
   const { t, i18n } = useTranslation();
@@ -22,8 +22,7 @@ const WeatherCard = () => {
 
   useEffect(() => {
     i18n.changeLanguage('ar');
-}, [i18n])
-
+  }, [i18n]);
 
   useEffect(() => {
     setSelectedHourlyForecast(null);
@@ -64,85 +63,6 @@ const WeatherCard = () => {
         behavior: 'smooth',
       });
     }
-  };
-
-  const renderHourlyForecast = () => {
-    if (!weatherData.hourlyForecast) return null;
-    return (
-      <div className='hourly-forecast-container'>
-        <div
-          className='hourly-forecast-items'
-          ref={hourlyForecastContainerRef}
-        >
-          {weatherData.hourlyForecast.map((hourly, index) => (
-            <div
-              key={index}
-              className={`hourly-forecast-item ${
-                selectedHourlyForecast === hourly ? 'selected-item' : ''
-              }`}
-              onClick={() => handleHourlyClick(hourly)}
-            >
-              <div>
-                <Typography variant='h5'>{hourly.time}</Typography>
-              </div>
-              <div className='hourly-forecast-temp-icon'>
-                <Typography variant='h6'>{hourly.temperature}&deg;م</Typography>
-                <img
-                  src={hourly.icon}
-                  alt=''
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-        <div
-          className='right-arrow'
-          onClick={slideRight}
-        >
-          <FontAwesomeIcon icon={faCaretRight} />
-        </div>
-        <div
-          className='left-arrow'
-          onClick={slideLeft}
-        >
-          <FontAwesomeIcon icon={faCaretLeft} />
-        </div>
-      </div>
-    );
-  };
-
-  const renderDailyForecast = () => {
-    if (!weatherData.dailyForecast) return null;
-    return (
-      <div className='daily-forecast-container'>
-        {weatherData.dailyForecast.map((daily, index) => (
-          <div
-            key={index}
-            className={`daily-forecast-item ${
-              selectedDailyForecast === daily ? 'selected-item' : ''
-            }`}
-            onClick={() => handleDailyClick(daily)}
-          >
-            <div className='daily-date'>
-              <Typography variant='h5'>{daily.dateTime}</Typography>
-            </div>
-            <div className='min-max-icon'>
-              <div className='min-max-temp'>
-                <Typography variant='h6'>العظمى: {daily.maxTemperature}&deg;م</Typography>
-                <Typography variant='h6'>الصغرى: {daily.minTemperature}&deg;م</Typography>
-              </div>
-
-              <div className='daily-icon'>
-                <img
-                  src={daily.icon}
-                  alt=''
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    );
   };
 
   return (
@@ -259,9 +179,20 @@ const WeatherCard = () => {
               </div>
             </div>
           </div>
-          {renderHourlyForecast()}
+          <HourlyForecast
+            weatherData={weatherData}
+            selectedHourlyForecast={selectedHourlyForecast}
+            handleHourlyClick={handleHourlyClick}
+            slideLeft={slideLeft}
+            slideRight={slideRight}
+            hourlyForecastContainerRef={hourlyForecastContainerRef}
+          />
         </div>
-        {renderDailyForecast()}
+        <DailyForecast
+          weatherData={weatherData}
+          selectedDailyForecast={selectedDailyForecast}
+          handleDailyClick={handleDailyClick}
+        />
       </Container>
     </div>
   );
