@@ -63,13 +63,12 @@ export const WeatherReducer = (state, action) => {
 export const fetchWeatherData = async (dispatch, input) => {
   dispatch({ type: 'FETCH_WEATHER_START' });
   try {
-    const apiKey = process.env.WEATHER_API_KEY;
     let url;
     if (typeof input === 'string') {
-      url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${input}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
+      url = `https://api.weatherapi.com/v1/forecast.json?key=a93da07875fc465c97a75512241003&q=${input}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
     } else if (typeof input === 'object') {
       const { latitude, longitude } = input;
-      url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${latitude},${longitude}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
+      url = `https://api.weatherapi.com/v1/forecast.json?key=a93da07875fc465c97a75512241003&q=${latitude},${longitude}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
     }
     const response = await axios.get(url);
     const weatherData = response.data;
