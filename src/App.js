@@ -17,7 +17,7 @@ function App() {
       <WeatherProvider>
         <div className='App'>
           <WeatherCrad />
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </WeatherProvider>
     </ThemeProvider>

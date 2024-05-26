@@ -364,25 +364,19 @@ input[type='text'] {
 }
 
 @media (max-width: 1024px) {
-  html {
-    font-size: 56.25%;
-  }
   .daily-forecast-container {
-    bottom: 3rem;
+    bottom: 5rem;
   }
 }
 
 @media (max-width: 768px) {
-  .hourly-forecast-items {
+  .hourly-forecast-container {
     scrollbar-color: transparent transparent;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
-  .hourly-forecast-items::-webkit-scrollbar {
+  .hourly-forecast-container::-webkit-scrollbar {
     display: none;
-  }
-  .daily-forecast-container {
-    bottom: 10rem;
   }
 }
 
@@ -409,7 +403,7 @@ input[type='text'] {
     width: 90%;
     top: 32%;
     padding-top: 5rem;
-  }
+  }  
 }
 
 @media (max-width: 390px) {
