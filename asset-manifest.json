@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Weather-Forecasting-App/static/css/main.b28ad159.css",
-    "main.js": "/Weather-Forecasting-App/static/js/main.4643e588.js",
+    "main.js": "/Weather-Forecasting-App/static/js/main.d7b584ed.js",
     "static/js/488.5f2218c8.chunk.js": "/Weather-Forecasting-App/static/js/488.5f2218c8.chunk.js",
     "static/media/16.jpg": "/Weather-Forecasting-App/static/media/16.5a0419bffc1bae81957e.jpg",
     "static/media/Amiri-Regular.ttf": "/Weather-Forecasting-App/static/media/Amiri-Regular.854754d93a8cf8711a94.ttf",
@@ -16,11 +16,11 @@
     "index.html": "/Weather-Forecasting-App/index.html",
     "static/media/getFetch.cjs": "/Weather-Forecasting-App/static/media/getFetch.c4cca45e22bc1b2c7d0d.cjs",
     "main.b28ad159.css.map": "/Weather-Forecasting-App/static/css/main.b28ad159.css.map",
-    "main.4643e588.js.map": "/Weather-Forecasting-App/static/js/main.4643e588.js.map",
+    "main.d7b584ed.js.map": "/Weather-Forecasting-App/static/js/main.d7b584ed.js.map",
     "488.5f2218c8.chunk.js.map": "/Weather-Forecasting-App/static/js/488.5f2218c8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b28ad159.css",
-    "static/js/main.4643e588.js"
+    "static/js/main.d7b584ed.js"
   ]
 }
