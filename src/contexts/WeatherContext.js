@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from 'react';
 import { WeatherReducer, initialState, fetchWeatherData } from '../reducers/WeatherReducer';
 
-export const WeatherContext = createContext();
+  const WeatherContext = createContext();
 
 export const WeatherProvider = ({ children }) => {
   const [state, dispatch] = useReducer(WeatherReducer, initialState);
