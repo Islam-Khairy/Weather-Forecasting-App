@@ -68,7 +68,7 @@ export const fetchWeatherData = async (dispatch, input) => {
       url = `https://api.weatherapi.com/v1/forecast.json?key=7b868c502ed447be922102017242605&q=${input}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
     } else if (typeof input === 'object') {
       const { latitude, longitude } = input;
-      url = `https://api.weatherapi.com/v1/forecast.json?key=7b868c502ed447be922102017242605&q=37.021,41.963&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
+      url = `https://api.weatherapi.com/v1/forecast.json?key=7b868c502ed447be922102017242605&q=${latitude},${longitude}&days=7&aqi=no&alerts=no&units=metric&lang=ar`;
     }
     const response = await axios.get(url);
     const weatherData = response.data;
